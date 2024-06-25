@@ -1,0 +1,16 @@
+version: "3.9"
+services:
+  bid-buddy-db:
+    image: postgres
+    restart: always
+    container_name: cloud-postgres
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_PASSWORD: vaibhav
+      PGDATA: /data/postgres
+    volumes:
+      - postgres:/data/postgres
+
+volumes:
+  postgres:
